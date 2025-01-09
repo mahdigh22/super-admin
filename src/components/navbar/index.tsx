@@ -28,8 +28,8 @@ export default function Navbar() {
       icon: Calendar,
     },
     {
-      title: "Search",
-      url: "#",
+      title: "Login",
+      url: "/login",
       icon: Search,
     },
   ];
