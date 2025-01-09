@@ -1,3 +1,4 @@
+import { useNavigate } from "@tanstack/react-router";
 import {
   Sidebar,
   SidebarContent,
@@ -33,6 +34,7 @@ export default function Navbar() {
       icon: Search,
     },
   ];
+  const navigate = useNavigate();
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -57,7 +59,11 @@ export default function Navbar() {
                       key={item.title}
                       className="group flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:shadow-md transition"
                     >
-                      <SidebarMenuButton>
+                      <SidebarMenuButton
+                        onClick={() => {
+                          navigate({ to: item.url });
+                        }}
+                      >
                         <a
                           href={item.url}
                           className="flex items-center gap-3 text-gray-600 group-hover:text-blue-400"
